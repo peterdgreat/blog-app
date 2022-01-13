@@ -1,24 +1,49 @@
-# README
+![](https://img.shields.io/badge/Microverse-blueviolet)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Blogger
 
-Things you may want to cover:
+> The Blog app will be a classic example of a blog website. This will show the list of posts and empower readers to interact with them by adding comments and liking posts.
 
-* Ruby version
+## Prerequisites
 
-* System dependencies
+- Ruby on Rails
+- PostgreSQL
 
-* Configuration
+## Getting Started
 
-* Database creation
+- Run git clone on this project at the desired directory:
+  ```
+  git clone (https://github.com/peterdgreat/blog-app.git)
+  ```
+- Go to the cloned directory with `cd blog-app`
+- Install the required dependecies with `bundle install`
+- With Ruby on Rails and PostgreSQL installed in your environment, you can run `rails s` to see the website
 
-* Database initialization
+## Tests
 
-* How to run the test suite
+- To run the tests you must first have run `bundle install`
+- Then in the repository's main directory run `bundle exec rspec spec`
 
-* Services (job queues, cache servers, search engines, etc.)
+## Author
 
-* Deployment instructions
+- GitHub: [@peterdgreat](https://github.com/peterdgreat)
+- Twitter: [@dev_peter_o](https://twitter.com/dev_Peter_O)
+- LinkedIn: [@ajayipeter](https://linkedin.com/in/ajayipeter)
 
-* ...
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Microverse
+
+## 📝 License
+
+This project is [MIT](./LICENSE) licensed.
