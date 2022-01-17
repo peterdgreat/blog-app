@@ -20,11 +20,12 @@ default: &default
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  url: <%= ENV['DATABASE_URL'] %>
 
 development:
   <<: *default
   database: blog_app_development
-  url: postgres://iqcrmkrjtlcrmi:5f5e21fd40bde860fcd27e2e8d7cf082b99d7e3421b84da969f3aab9ffb67b6f@ec2-34-230-198-12.compute-1.amazonaws.com:5432/darmk2unek4lt3
+  url: <%= ENV['DATABASE_URL'] %>
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -59,7 +60,7 @@ development:
 test:
   <<: *default
   database: blog_app_test
-  url: postgres://iqcrmkrjtlcrmi:5f5e21fd40bde860fcd27e2e8d7cf082b99d7e3421b84da969f3aab9ffb67b6f@ec2-34-230-198-12.compute-1.amazonaws.com:5432/darmk2unek4lt3
+  url: <%= ENV['DATABASE_URL'] %>
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
