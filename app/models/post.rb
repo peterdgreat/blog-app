@@ -1,7 +1,11 @@
 class Post < ApplicationRecord
-  belongs_to :author, class_name: 'User', foreign_key: :author_id
-  has_many :comments, foreign_key: :author_id
-  has_many :likes, foreign_key: :author_id
+  belongs_to :author, class_name: 'User'
+  has_many :comments
+  has_many :like
+
+  after_save :post_update_counter
+
+  private
 
   def post_update_counter
     user = User.find(author_id)
@@ -9,6 +13,6 @@ class Post < ApplicationRecord
   end
 
   def most_recent_comments
-    Comment.where(post_id: id).order(created_at: :desc).limit(3)
+    Comment.where(post_id: id).order(created_at: :desc).limit(5)
   end
 end
