@@ -8,6 +8,6 @@ class Like < ApplicationRecord
 
   def like_update_counter
     post = Post.find(post_id)
-    post.update_attribute(:likes_count, post.likes_count + 1)
+    post.update_attribute(:likes_counter, post.likes_counter + 1)
   end
 end

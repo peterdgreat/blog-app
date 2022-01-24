@@ -1,1 +1,14 @@
-<h1>User Information  </h1>
+<div>
+<%= render 'user', user: @user%>
+<div class ='d-flex flex-column mt-5 border px-3'>
+<h3>
+Bio
+</h3>
+<%= @user.bio %>
+</div>
+<div  class="mt-2">
+<% @posts.each do |post| %>
+  <%= render "posts/post", post: post%>
+<%end%>
+</div>
+</div>
