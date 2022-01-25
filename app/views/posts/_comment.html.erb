@@ -1,0 +1,10 @@
+<ul class="list-unstyled border px-3">
+
+      <% post.comments.each do |comment| %>
+        <li>
+     
+          <span><%= comment.author.name %>: <%= comment.text %></span>
+        </li>
+      <% end %>
+   
+  </ul> 
