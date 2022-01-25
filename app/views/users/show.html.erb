@@ -9,6 +9,7 @@ Bio
 <div  class="mt-2">
 <% @posts.each do |post| %>
   <%= render "posts/post", post: post%>
+  <%= link_to "Comment", new_user_post_comment_path(@user.id,post.id) %>
 <%end%>
 </div>
 </div>
