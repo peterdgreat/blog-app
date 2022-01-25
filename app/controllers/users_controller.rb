@@ -5,6 +5,6 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @posts = Post.where(author_id: @user.id).order(created_at: :desc).limit(3)
+    @posts = @user.most_recent_3_posts
   end
 end
