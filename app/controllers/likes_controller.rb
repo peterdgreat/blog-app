@@ -1,10 +1,8 @@
 def create
-    @like = Like.new(params[:like])
-    if @like.save
-      flash[:success] = "Like successfully created"
-      redirect_to @like
-    else
-      flash[:error] = "Something went wrong"
-      render 'new'
-    end
+    user = User.find(params[:user_id])
+    post = Post.find(params[:id])
+    like = Like.new(user: user, post: post)
+
+    like.save
+    redirect_to user_post_url(user.id)
 end
