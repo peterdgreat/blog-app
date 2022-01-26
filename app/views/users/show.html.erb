@@ -9,6 +9,11 @@ Bio
 <div  class="mt-2">
 <% @posts.each do |post| %>
   <%= render "posts/post", post: post%>
+
+  
 <%end%>
 </div>
+</div>
+<div class="my-5">
+<%= link_to "Create a New Post",  new_user_post_path(@user.id) %>
 </div>
