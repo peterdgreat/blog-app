@@ -8,7 +8,6 @@ class LikesController < ApplicationController
       flash.now[:message] = 'Like saved'
       redirect_to user_post_path(user.id, post.id)
     else
-      puts 'Error'
       flash.now[:error] = 'Error: Like could not be saved'
       render :new, locals: { like: like }
     end
