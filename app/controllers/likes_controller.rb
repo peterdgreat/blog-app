@@ -5,7 +5,6 @@ class LikesController < ApplicationController
 
     like = Like.new(author_id: user.id, post_id: post.id)
     if like.save
-      puts 'Like saved'
       flash.now[:message] = 'Like saved'
       redirect_to user_post_path(user.id, post.id)
     else
