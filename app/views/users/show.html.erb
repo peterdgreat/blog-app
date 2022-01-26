@@ -10,6 +10,8 @@ Bio
 <% @posts.each do |post| %>
   <%= render "posts/post", post: post%>
   <%= link_to "Comment", new_user_post_comment_path(@user.id,post.id) %>
+  <%= button_to "Like" , user_post_likes_path(@user.id,post.id), method: "post"  %>
+  
 <%end%>
 </div>
 </div>

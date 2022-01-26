@@ -25,7 +25,7 @@ class PostsController < ApplicationController
     post.likes_counter = 0
     respond_to do |format|
       format.html do
-        if post.save
+        if post.save && user.update_attribute(:posts_counter, user.posts_counter + 1)
           flash[:success] = 'post saved successfully'
           redirect_to posts_index_url(user.id)
         else
