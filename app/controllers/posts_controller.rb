@@ -18,14 +18,12 @@ class PostsController < ApplicationController
   end
 
   def create
-    post = Post.new(params.require(:post).permit(:title, :text))
-    user = User.find(params[:user_id])
-    post.author = user
-    post.comments_counter = 0
-    post.likes_counter = 0
+    post = current_user.posts.new(post_params)
+    user = current_user
+
     respond_to do |format|
       format.html do
-        if post.save && user.update_attribute(:posts_counter, user.posts_counter + 1)
+        if post.save
           flash[:success] = 'post saved successfully'
           redirect_to posts_index_url(user.id)
         else
@@ -34,5 +32,11 @@ class PostsController < ApplicationController
         end
       end
     end
+  end
+
+  private
+
+  def post_params
+    params.require(:post).permit(:title, :text)
   end
 end

@@ -2,7 +2,7 @@ class Post < ApplicationRecord
   belongs_to :author, class_name: 'User'
   has_many :comments
   has_many :like
-
+  after_save :post_update_counter
   def post_update_counter
     user = User.find(author_id)
     user.posts_counter += 1
